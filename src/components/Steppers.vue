@@ -60,7 +60,7 @@
   display: inline-block;
 }
 .container .step-circle {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -74,6 +74,6 @@
   flex-grow: 1;
   height: 2px;
   width: 60px;
-  margin: 0 0.5rem;
+  margin: 0 2rem;
 }
 </style>
