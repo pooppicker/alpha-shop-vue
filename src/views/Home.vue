@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="alpha-shop">
     <NavTabs />
     <!-- Steppers -->
     <div class="col-md-6">
@@ -21,11 +21,11 @@ export default {
 </script>
 
 <style>
-.container {
+.alpha-shop {
   width: 60%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
   margin: 20px auto;
   position: relative;

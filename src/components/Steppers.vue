@@ -21,8 +21,8 @@
 
 <style>
 #stepper {
-  position: relative;
   flex-basis: 50%;
+  position: relative;
 }
 .container {
   display: flex;
@@ -73,6 +73,7 @@
   background-color: #2a2a2a;
   flex-grow: 1;
   height: 2px;
+  width: 60px;
   margin: 0 0.5rem;
 }
 </style>
