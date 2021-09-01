@@ -31,18 +31,15 @@ export default {
   color: #ffffff;
   z-index: 99;
 }
-.main__button__next::after {
-  content: "→";
-  margin-left: 1rem;
+.main__button__next > svg path {
+  fill: #fff;
 }
 .main__button__previous {
   -webkit-appearance: none;
   border: none;
   background: white;
 }
-.main__button__previous[disabled] {
-  visibility: hidden;
-}
+
 .main__button__previous::before {
   content: "←";
   margin-right: 1rem;
