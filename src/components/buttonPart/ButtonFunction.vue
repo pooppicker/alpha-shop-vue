@@ -6,6 +6,7 @@
     <Button
       class="btn main__button__next"
       :onClick="finalStep ? handleSubmit : handleNext"
+      active="activate"
     >
       <template v-if="finalStep">確認下單</template>
       <template v-else>下一步</template>

@@ -1,7 +1,7 @@
 <template>
   <div :class="{ step: true, inactive }">
-    <div v-if="checked" class="step checked"></div>
-    <span v-else class="step-circle">{{ index }}</span>
+    <div v-if="checked" class="step-circle checked"></div>
+    <span :class="{ inactive }" v-else class="step-circle">{{ index }}</span>
     <span class="step-laebl">{{ title }}</span>
     <span class="step-line"></span>
   </div>
@@ -38,24 +38,28 @@ export default {
   align-items: center;
 }
 
-.container .step.checked .step-circle::after {
+.step-circle.checked::after {
   content: "✓";
   position: absolute;
   background-color: #2a2a2a;
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 2rem;
+  height: 2rem;
   text-align: center;
-  line-height: 1;
+  line-height: 1.3;
   border-radius: 50%;
   color: #fff;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 25px;
 }
-.container .step.active .step-circle {
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 2px solid #2c53a0;
+.step.inactive {
+  color: #afb1bd;
 }
+.step .step-circle.inactive {
+  background-color: #fff;
+  border: 1px solid black;
+  color: #000;
+}
+
 .container .step-laebl {
   display: inline-block;
 }
@@ -66,7 +70,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #2a2a2a;
+  background-color: #2a2a2a;
+  color: #fff;
   border-radius: 50%;
 }
 .container .step-line {
