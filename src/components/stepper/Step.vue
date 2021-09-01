@@ -1,36 +1,36 @@
 <template>
-  <div id="stepper" class="main__stepper">
-    <div class="container stepper-container">
-      <div class="step active">
-        <sapn class="step-circle">1</sapn>
-        <span class="step-laebl">寄送地址</span>
-        <span class="step-line"></span>
-      </div>
-      <div class="step">
-        <span class="step-circle">2</span>
-        <span class="step-laebl">運送方式</span>
-        <span class="step-line"></span>
-      </div>
-      <div class="step">
-        <span class="step-circle">3</span>
-        <span class="step-laebl">付款資訊</span>
-      </div>
-    </div>
+  <div :class="{ step: true, inactive }">
+    <div v-if="checked" class="step checked"></div>
+    <sapn v-else class="step-circle">{{ index }}</sapn>
+    <span class="step-laebl">{{ title }}</span>
+    <span class="step-line"></span>
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    index: {
+      type: Number,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    checked: {
+      type: Boolean,
+      required: true,
+    },
+    inactive: {
+      type: Boolean,
+      required: true,
+    },
+  },
+};
+</script>
+
 <style>
-#stepper {
-  flex-basis: 50%;
-  position: relative;
-}
-.container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  padding-left: 0;
-  box-sizing: border-box;
-}
 .container .step {
   flex-grow: 1;
   box-sizing: border-box;
@@ -75,5 +75,8 @@
   height: 2px;
   width: 60px;
   margin: 0 2rem;
+}
+.container .step:last-child .step-line {
+  display: none;
 }
 </style>

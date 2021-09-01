@@ -3,7 +3,7 @@
     <NavTabs />
     <!-- Steppers -->
     <div class="col-md-6">
-      <Steppers />
+      <Steppers :currentStep="step" />
     </div>
     <!-- form panel -->
     <Form />
@@ -18,14 +18,34 @@
 
 <script>
 import NavTabs from "./../components/NavTabs.vue";
-import Steppers from "./../components/Steppers.vue";
+import Steppers from "../components/stepper/Steppers.vue";
 import Form from "./../components/Form.vue";
+
+const dummyData = {
+  salutation: "Mr",
+  username: "",
+  phone: "",
+  email: "",
+  city: "",
+  addr: "",
+  shippingFee: 0,
+  ccname: "",
+  cardnumber: "",
+  expdate: "",
+  cvv: "",
+  totalPrice: 0,
+};
 
 export default {
   components: {
     NavTabs,
     Steppers,
     Form,
+  },
+  data() {
+    return {
+      form: dummyData,
+    };
   },
 };
 </script>
