@@ -40,9 +40,9 @@ export default {
   border: none;
   background: white;
 }
-/* .main__button__previous[disabled] {
+.main__button__previous[disabled] {
   visibility: hidden;
-} */
+}
 .main__button__previous::before {
   content: "←";
   margin-right: 1rem;

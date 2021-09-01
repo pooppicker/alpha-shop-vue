@@ -1,7 +1,7 @@
 <template>
   <div :class="{ step: true, inactive }">
     <div v-if="checked" class="step checked"></div>
-    <sapn v-else class="step-circle">{{ index }}</sapn>
+    <span v-else class="step-circle">{{ index }}</span>
     <span class="step-laebl">{{ title }}</span>
     <span class="step-line"></span>
   </div>

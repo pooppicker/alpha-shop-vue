@@ -1,10 +1,6 @@
 <template>
   <div id="btn-control" class="main__button">
-    <Button
-      class="btn main__button__previous"
-      disabled="disabled"
-      :onClick="handlePrevious"
-    >
+    <Button class="btn main__button__previous" :onClick="handlePrevious">
       上一步
     </Button>
     <Button
@@ -24,7 +20,7 @@ export default {
     Button,
   },
   props: {
-    handleSumit: {
+    handleSubmit: {
       type: Function,
       required: true,
     },
@@ -36,12 +32,12 @@ export default {
   methods: {
     handlePrevious() {
       if (this.step > 1) {
-        this.$route.push(`${this.step - 1}`);
+        this.$router.push(`${this.step - 1}`);
       }
     },
     handleNext() {
       if (this.step < 3) {
-        this.$route.push(`${this.step + 1}`);
+        this.$router.push(`${this.step + 1}`);
       }
     },
   },
