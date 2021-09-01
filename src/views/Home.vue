@@ -59,7 +59,7 @@ export default {
   align-items: flex-start;
   margin: 20px auto;
   position: relative;
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
 }
 .main__button {
   position: absolute;
