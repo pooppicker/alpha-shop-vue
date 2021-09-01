@@ -1,5 +1,5 @@
 <template>
-  <div class="part d-none">
+  <div class="part">
     <h2 class="form__title">付款資訊</h2>
     <div class="form-row">
       <div class="main__form__payment">
@@ -35,3 +35,36 @@
     </div>
   </div>
 </template>
+
+<style>
+.main__form__payment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main__form__payment .card-name,
+.main__form__payment .card-number {
+  margin-bottom: 1rem;
+}
+.main__form__payment .card-name input,
+.main__form__payment .card-number input {
+  width: 300px;
+}
+.card-verify {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.main__form__payment .card-verify .valid-date {
+  margin-right: 1rem;
+}
+.main__form__payment .card-verify .cvc,
+.main__form__payment .card-verify .valid-date {
+  flex-grow: 1;
+}
+.main__form__payment .card-verify .cvc input,
+.main__form__payment .card-verify .valid-date input {
+  width: 95%;
+}
+</style>

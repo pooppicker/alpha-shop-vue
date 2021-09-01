@@ -32,8 +32,7 @@ export default {
 .main__form {
   padding: 32px 0;
   min-height: 500px;
-  width: 55%;
-  outline: 1px solid black;
+  width: 54%;
 }
 .main__form .form-container {
   height: 100%;
@@ -43,30 +42,5 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: space-between;
-}
-.main form .form-row .main__form__payment {
-  width: 100%;
-}
-.main form .form-row .main__form__payment .card-name,
-.main form .form-row .main__form__payment .card-number {
-  margin-bottom: 1rem;
-}
-.main form .form-row .main__form__payment .card-name input,
-.main form .form-row .main__form__payment .card-number input {
-  width: 60%;
-}
-.main form .form-row .main__form__payment .card-verify {
-  display: flex;
-}
-.main form .form-row .main__form__payment .card-verify .cvc {
-  margin-left: 1rem;
-}
-.main form .form-row .main__form__payment .card-verify .cvc,
-.main form .form-row .main__form__payment .card-verify .valid-date {
-  flex-grow: 1;
-}
-.main form .form-row .main__form__payment .card-verify .cvc input,
-.main form .form-row .main__form__payment .card-verify .valid-date input {
-  width: 100%;
 }
 </style>
