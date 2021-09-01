@@ -106,6 +106,8 @@ label {
   display: block;
   margin-bottom: 6px;
   font-size: 14px;
+  text-align: left;
+  font-weight: bold;
   color: #808080;
 }
 input {
