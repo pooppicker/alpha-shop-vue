@@ -5,12 +5,8 @@
     <div class="col-md-6">
       <Steppers />
     </div>
-    <div id="form" class="main__form">
-      <div class="form-container">
-        <!-- Form Panel -->
-        <AlphaShopForm />
-      </div>
-    </div>
+    <!-- form panel -->
+    <Form />
     <div id="btn-control" class="main__button">
       <button class="btn main__button__previous" disabled="disabled">
         上一步
@@ -23,13 +19,13 @@
 <script>
 import NavTabs from "./../components/NavTabs.vue";
 import Steppers from "./../components/Steppers.vue";
-import AlphaShopForm from "./../components/AlphaShopForm.vue";
+import Form from "./../components/Form.vue";
 
 export default {
   components: {
     NavTabs,
     Steppers,
-    AlphaShopForm,
+    Form,
   },
 };
 </script>
