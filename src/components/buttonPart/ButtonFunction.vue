@@ -1,17 +1,11 @@
 <template>
   <div id="btn-control" class="main__button">
-    <Button
-      class="btn main__button__previous"
-      :onClick="handlePrevious"
-      v-show="step !== 1"
-    >
-      <template><RightArrow /></template>
+    <Button class="btn main__button__previous" :onClick="handlePrevious">
       上一步
     </Button>
     <Button
       class="btn main__button__next"
       :onClick="finalStep ? handleSubmit : handleNext"
-      active="activate"
     >
       <template v-if="finalStep">確認下單</template>
       <template v-else>下一步</template>
@@ -20,12 +14,10 @@
 </template>
 
 <script>
-import RightArrow from "../../assets/Arrows/arrowright-arrow.svg";
 import Button from "./../buttonPart/Button.vue";
 export default {
   components: {
     Button,
-    RightArrow,
   },
   props: {
     handleSubmit: {
