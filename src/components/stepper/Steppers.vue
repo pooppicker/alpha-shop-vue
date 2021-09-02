@@ -36,7 +36,7 @@ export default {
 
 <style>
 #stepper {
-  flex-basis: 50%;
+  /* flex-basis: 50%; */
   position: relative;
 }
 .container {

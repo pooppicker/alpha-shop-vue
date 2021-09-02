@@ -1,5 +1,5 @@
 <template>
-  <div class="part">
+  <div class="part2">
     <h2 class="form__title">運送方式</h2>
     <div class="form-row">
       <div class="main__form__delivery">
@@ -31,22 +31,22 @@
 </template>
 
 <style>
-input[type="radio"] {
+.main__form__delivery input[type="radio"] {
   margin-right: 1rem;
   -webkit-appearance: none;
   border-radius: 50%;
 }
-input[type="radio"] ~ label {
+.main__form__delivery input[type="radio"] ~ label {
   display: inline-flex;
   flex-direction: column;
   vertical-align: middle;
   margin: 0;
   font-size: 13px;
 }
-input[type="radio"]:checked {
+.main__form__delivery input[type="radio"]:checked {
   box-shadow: inset 0 0 0 5px #2a2a2a;
 }
-.deliver input[type="radio"]:checked::before {
+.main__form__delivery .deliver input[type="radio"]:checked::before {
   content: "";
   position: absolute;
   top: 0;
@@ -64,6 +64,7 @@ input[type="radio"]:checked {
   text-align: left;
 }
 .main__form__delivery .deliver {
+  width: 600px;
   position: relative;
   flex-grow: 1;
   border: 1px solid #f0f0f5;

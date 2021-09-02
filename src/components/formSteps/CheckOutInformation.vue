@@ -1,5 +1,5 @@
 <template>
-  <div class="part">
+  <div class="part1">
     <h2 class="form__title">寄送地址</h2>
     <!-- name -->
     <div class="form-row name">
@@ -90,8 +90,6 @@ export default {
 .form-row {
   margin-bottom: 24px;
   display: flex;
-  justify-content: start;
-  align-items: center;
 }
 .title-wrapper,
 .city-wrapper {
@@ -128,23 +126,20 @@ label {
   font-weight: bold;
   color: #808080;
 }
-input {
+.part1 input {
   border: 1px solid #2a2a2a;
   border-radius: 5px;
   font-size: 13px;
   padding: 0.5rem;
 }
-.form-full-name,
-.form-address {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin-left: 1rem;
+.form-full-name input,
+.form-address input {
+  width: 440px;
 }
-.form-phone {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin-right: 1rem;
+.form-phone input {
+  width: 420px;
+}
+.form-email input {
+  width: 160px;
 }
 </style>

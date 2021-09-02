@@ -52,7 +52,7 @@ export default {
 <style>
 .main__button {
   position: absolute;
-  top: 100%;
+  top: 67%;
   margin-top: 2rem;
   width: 55%;
   border-top: 1px solid #f0f0f5;
