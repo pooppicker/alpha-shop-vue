@@ -4,11 +4,11 @@
       <!-- form-panel -->
       <form action="" id="form-panel" class="form-panel">
         <!-- part 1 -->
-        <CheckOutInformation />
+        <CheckOutInformation v-if="firstStep" />
         <!-- part 2 -->
-        <CheckOutDelivery />
+        <CheckOutDelivery v-else-if="nextStep" />
         <!-- part 3 -->
-        <CheckOutPayment />
+        <CheckOutPayment v-else />
       </form>
     </div>
   </div>
@@ -20,10 +20,24 @@ import CheckOutDelivery from "./../components/steps/CheckOutDelivery.vue";
 import CheckOutPayment from "./../components/steps/CheckOutPayment.vue";
 
 export default {
+  props: {
+    step: {
+      type: Number,
+      default: 1,
+    },
+  },
   components: {
     CheckOutInformation,
     CheckOutDelivery,
     CheckOutPayment,
+  },
+  computed: {
+    firstStep() {
+      return this.step === 1;
+    },
+    nextStep() {
+      return this.step === 2;
+    },
   },
 };
 </script>

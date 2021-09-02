@@ -64,6 +64,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    salutation: String,
+    username: String,
+    phone: String,
+    email: String,
+    city: String,
+    addr: String,
+  },
+  methods: {
+    handleChange(obj) {
+      this.$emit("formSwitch", obj);
+    },
+  },
+};
+</script>
+
 <style>
 .form__title {
   margin-bottom: 1rem;

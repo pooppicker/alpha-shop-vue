@@ -6,7 +6,7 @@
       <Steppers :currentStep="step" />
     </div>
     <!-- form panel -->
-    <Form />
+    <Form :step="step" />
     <ButtonFunction :step="step" :handleSubmit="handleSubmit" />
   </div>
 </template>
