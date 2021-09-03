@@ -6,9 +6,9 @@
         <h6 class="item-title">{{ title }}</h6>
       </div>
       <div class="cart-qty">
-        <div class="cart-button remove" @click="handelDecrease">-</div>
+        <div class="cart-button remove" @click="handleDecrease">-</div>
         <div class="item-qty number">{{ amount }}</div>
-        <div class="cart-button add" @click="handelIncrease">+</div>
+        <div class="cart-button add" @click="handleIncrease">+</div>
       </div>
       <span class="price">{{ price }}</span>
     </div>

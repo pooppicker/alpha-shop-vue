@@ -1,33 +1,14 @@
 <template>
   <sidebar id="cart" class="cart">
-    <div class="cart-item">
-      <img src="https://i.ibb.co/7tg68Wf/jeans1-3x.png" alt="" />
-      <div class="cart-content">
-        <div class="cart-info">
-          <h6 class="item-title">破壞補丁修身牛仔褲</h6>
-        </div>
-        <div class="cart-qty">
-          <div class="cart-button remove">-</div>
-          <div class="item-qty number">1</div>
-          <div class="cart-button add">+</div>
-        </div>
-        <span class="price">3999</span>
-      </div>
-    </div>
-    <div class="cart-item">
-      <img src="https://i.ibb.co/1d5MVvf/jeans2-3x.png" alt="" />
-      <div class="cart-content">
-        <div class="cart-info">
-          <h6 class="item-title">破壞補丁修身牛仔褲</h6>
-        </div>
-        <div class="cart-qty">
-          <div class="cart-button remove">-</div>
-          <div class="item-qty number">1</div>
-          <div class="cart-button add">+</div>
-        </div>
-        <span class="price">1299</span>
-      </div>
-    </div>
+    <Item
+      v-for="(item, index) in items"
+      :key="index"
+      :index="index"
+      v-bind="item"
+      :addItem="increaseAmount"
+      :removeItem="decreaseAmount"
+    />
+
     <div class="delivery-fee">
       <span>運費</span>
       <span class="fee">免費</span>
@@ -40,6 +21,7 @@
 </template>
 
 <script>
+import Item from "./../cart/Item.vue";
 const items = [
   {
     img: "https://i.ibb.co/7tg68Wf/jeans1-3x.png",
@@ -55,11 +37,27 @@ const items = [
   },
 ];
 export default {
+  components: {
+    Item,
+  },
   data() {
     return {
       items,
     };
   },
+  methods: {
+    increaseAmount(index) {
+      return () => {
+        this.items[index].amount++;
+      };
+    },
+    decreaseAmount(index) {
+      return () => {
+        if (this.items[index].amount > 1) this.items[index].amount--;
+      };
+    },
+  },
+  computed: {},
 };
 </script>
 
@@ -140,5 +138,8 @@ export default {
   display: flex;
   justify-content: space-between;
   padding-top: 0.5rem;
+}
+.cart .delivery-fee {
+  font-weight: bold;
 }
 </style>
