@@ -13,7 +13,7 @@
     <!-- form panel -->
     <div class="row right">
       <div class="col-md-6">
-        <Cart />
+        <Cart :shippingFee="form.shippingFee" :totalPrice="form.totalPrice" />
       </div>
     </div>
   </div>
@@ -32,12 +32,12 @@ const dummyData = {
   email: "",
   city: "",
   addr: "",
-  shippingFee: 0,
+  shippingFee: 500,
   ccname: "",
   cardnumber: "",
   expdate: "",
   cvv: "",
-  totalPrice: 0,
+  totalPrice: 5298,
 };
 
 export default {

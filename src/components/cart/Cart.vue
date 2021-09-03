@@ -8,20 +8,16 @@
       :addItem="increaseAmount"
       :removeItem="decreaseAmount"
     />
-
-    <div class="delivery-fee">
-      <span>運費</span>
-      <span class="fee">免費</span>
-    </div>
-    <div class="delivery-total">
-      <span>小計</span>
-      <span class="total">$5798</span>
-    </div>
+    <DeliveryFee title="運費" :price="shippingFee" />
+    <Total title="小計" :price="totalPrice" />
   </sidebar>
 </template>
 
 <script>
 import Item from "./../cart/Item.vue";
+import DeliveryFee from "./../cart/DeliveryFee.vue";
+import Total from "./../cart/Total.vue";
+
 const items = [
   {
     img: "https://i.ibb.co/7tg68Wf/jeans1-3x.png",
@@ -39,6 +35,18 @@ const items = [
 export default {
   components: {
     Item,
+    DeliveryFee,
+    Total,
+  },
+  props: {
+    shippingFee: {
+      type: Number,
+      required: true,
+    },
+    totalPrice: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
