@@ -39,23 +39,53 @@
   </sidebar>
 </template>
 
+<script>
+const items = [
+  {
+    img: "https://i.ibb.co/7tg68Wf/jeans1-3x.png",
+    title: "破壞補丁修身牛仔褲",
+    amount: 1,
+    price: 3999,
+  },
+  {
+    img: "https://i.ibb.co/1d5MVvf/jeans2-3x.png",
+    title: "刷色直筒牛仔褲",
+    amount: 1,
+    price: 1299,
+  },
+];
+export default {
+  data() {
+    return {
+      items,
+    };
+  },
+};
+</script>
+
 <style>
 .cart {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
-  justify-content: sapce-between;
+  width: 100%;
+  align-items: space-between;
+  justify-content: flex-start;
   padding: 1rem;
   top: 5.5em;
   border: 1px solid #f0f0f5;
   border-radius: 5px;
+  /* outline: 1px solid black; */
 }
 .cart .cart-item,
 .cart .delivery-fee,
-.cart .delivery-total {
+.cart .delivery-total,
+.cart .cart-item img,
+.cart .cart-content {
   display: flex;
+  align-items: center;
   margin-bottom: 1.5rem;
+  /* outline: 1px solid black; */
 }
 .cart .cart-item img,
 .cart .delivery-fee img,
@@ -68,7 +98,6 @@
 .cart .delivery-total .cart-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-end;
   flex: 1;
 }
