@@ -1,5 +1,5 @@
 <template>
-  <sidebar id="cart" class="cart">
+  <div id="cart" class="cart">
     <Item
       v-for="(item, index) in items"
       :key="index"
@@ -9,8 +9,8 @@
       :removeItem="decreaseAmount"
     />
     <DeliveryFee title="運費" :price="getShippingFee" />
-    <Total title="小計" :price="totalPrice" />
-  </sidebar>
+    <Total title="小計" :price="getTotalPrice" />
+  </div>
 </template>
 
 <script>
@@ -72,6 +72,15 @@ export default {
   computed: {
     getShippingFee() {
       return getPrice(this.shippingFee);
+    },
+    getTotalPrice() {
+      let total = 0;
+      this.items.forEach((item) => {
+        total += item.price * item.amount;
+      });
+      total += this.shippingFee;
+      this.$emit("change", total);
+      return getPrice(total);
     },
   },
 };

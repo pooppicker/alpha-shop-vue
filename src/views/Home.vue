@@ -36,7 +36,7 @@ const dummyData = {
   cardnumber: "",
   expdate: "",
   cvv: "",
-  totalPrice: 5298,
+  totalPrice: 0,
 };
 
 export default {
