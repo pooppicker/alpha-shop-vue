@@ -1,6 +1,5 @@
 <template>
   <div class="alpha-shop">
-    <NavTabs />
     <!-- Steppers -->
     <div class="row">
       <div class="col-md-6 left">
@@ -32,7 +31,7 @@ const dummyData = {
   email: "",
   city: "",
   addr: "",
-  shippingFee: 500,
+  shippingFee: 0,
   ccname: "",
   cardnumber: "",
   expdate: "",

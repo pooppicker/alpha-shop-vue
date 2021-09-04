@@ -4,12 +4,14 @@
     <div class="form-row">
       <div class="main__form__delivery">
         <div class="deliver normal">
-          <input
+          <RadioInput
             name="d-type"
             type="radio"
             value="normal"
             id="normal"
-            checked
+            :price="0"
+            :checked="shippingFee === 0"
+            @change="handleClick"
           /><label for="normal">
             <span class="deliver-title">標準運送</span>
             <span class="deliver-description">約3-7個工作天</span>
@@ -17,9 +19,15 @@
           <span class="deliver-price">免費</span>
         </div>
         <div class="deliver dhl">
-          <input name="d-type" type="radio" value="dhl" id="dhl" /><label
-            for="dhl"
-          >
+          <RadioInput
+            name="d-type"
+            type="radio"
+            value="dhl"
+            id="dhl"
+            :price="500"
+            :checked="shippingFee === 500"
+            @change="handleClick"
+          /><label for="dhl">
             <span class="deliver-title">DHL貨運</span>
             <span class="deliver-description">48小時內送達</span>
           </label>
@@ -29,6 +37,33 @@
     </div>
   </div>
 </template>
+
+<script>
+import RadioInput from "./../FormInput/RadioInput.vue";
+export default {
+  computed: {
+    RadioInput,
+  },
+  props: {
+    checked: {
+      type: Boolean,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    shippingFee: {
+      type: Number,
+      required: true,
+    },
+  },
+  methods: {
+    handleClick(e) {
+      this.$emit("formChnage", { name: "shippingFee", value: e });
+    },
+  },
+};
+</script>
 
 <style>
 .main__form__delivery input[type="radio"] {

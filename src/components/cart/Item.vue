@@ -10,7 +10,7 @@
         <div class="item-qty number">{{ amount }}</div>
         <div class="cart-button add" @click="handleIncrease">+</div>
       </div>
-      <span class="price">{{ price }}</span>
+      <span class="price">${{ price }}</span>
     </div>
   </div>
 </template>

@@ -8,13 +8,14 @@
       :addItem="increaseAmount"
       :removeItem="decreaseAmount"
     />
-    <DeliveryFee title="運費" :price="shippingFee" />
+    <DeliveryFee title="運費" :price="getShippingFee" />
     <Total title="小計" :price="totalPrice" />
   </sidebar>
 </template>
 
 <script>
 import Item from "./../cart/Item.vue";
+import getPrice from "../../utils/mixins";
 import DeliveryFee from "./../cart/DeliveryFee.vue";
 import Total from "./../cart/Total.vue";
 
@@ -47,6 +48,9 @@ export default {
       type: Number,
       required: true,
     },
+    onChange: {
+      type: Function,
+    },
   },
   data() {
     return {
@@ -65,7 +69,11 @@ export default {
       };
     },
   },
-  computed: {},
+  computed: {
+    getShippingFee() {
+      return getPrice(this.shippingFee);
+    },
+  },
 };
 </script>
 
