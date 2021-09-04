@@ -1,5 +1,3 @@
-export default {
-  getPrice(price) {
-    return price === 0 ? "免費" : `$${price}`;
-  },
-};
+export default function getPrice(price) {
+  return price === 0 ? "免費" : `$${price}`;
+}
