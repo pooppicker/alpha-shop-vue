@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .alpha-shop {
   width: 60%;
   height: 100%;

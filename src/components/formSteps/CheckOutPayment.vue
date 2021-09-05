@@ -36,7 +36,21 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+.part3 input {
+  border: 1px solid #2a2a2a;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 0.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  color: #808080;
+}
 .main__form__payment {
   width: 100%;
   display: flex;

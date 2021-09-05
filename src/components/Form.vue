@@ -6,11 +6,7 @@
         <!-- part 1 -->
         <CheckOutInformation v-if="firstStep" />
         <!-- part 2 -->
-        <CheckOutDelivery
-          v-else-if="nextStep"
-          :shippingFee="shippingFee"
-          v-on="$listeners"
-        />
+        <CheckOutDelivery v-else-if="nextStep" :shippingFee="shippingFee" />
         <!-- part 3 -->
         <CheckOutPayment v-else />
       </form>

@@ -64,11 +64,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .main__form__delivery input[type="radio"] {
   margin-right: 1rem;
   /* -webkit-appearance: none; */
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .main__form__delivery input[type="radio"] ~ label {
   display: inline-flex;
@@ -78,7 +78,7 @@ export default {
   font-size: 13px;
 }
 /* .main__form__delivery input[type="radio"]:checked {
-  box-shadow: inset 0 0 0 5px #2a2a2a;
+  box-shadow: inset 0 0 0 50% #2a2a2a;
 } */
 .deliver input[type="radio"]:checked::before {
   content: "";

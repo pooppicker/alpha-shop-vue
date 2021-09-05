@@ -74,20 +74,16 @@ export default {
     city: String,
     addr: String,
   },
-  methods: {
-    handleChange(obj) {
-      this.$emit("formSwitch", obj);
-    },
-  },
 };
 </script>
 
-<style>
+<style scoped>
 .form__title {
   margin-bottom: 1rem;
   display: flex;
 }
 .form-row {
+  width: 100%;
   margin-bottom: 24px;
   display: flex;
 }
@@ -135,9 +131,11 @@ label {
 .form-full-name input,
 .form-address input {
   width: 440px;
+  margin-left: 1rem;
 }
 .form-phone input {
   width: 420px;
+  margin-right: 1rem;
 }
 .form-email input {
   width: 160px;
