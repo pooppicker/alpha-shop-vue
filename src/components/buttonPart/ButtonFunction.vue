@@ -1,6 +1,10 @@
 <template>
   <div id="btn-control" class="main__button">
-    <Button class="btn main__button__previous" :onClick="handlePrevious">
+    <Button
+      :class="[step <= 1 ? 'hide-btn' : 'show-btn']"
+      class="btn main__button__previous"
+      :onClick="handlePrevious"
+    >
       上一步
     </Button>
     <Button
@@ -8,7 +12,7 @@
       :onClick="finalStep ? handleSubmit : handleNext"
     >
       <template v-if="finalStep">確認下單</template>
-      <template v-else>下一步</template>
+      <template :class="btn - next" v-else>下一步</template>
     </Button>
   </div>
 </template>
@@ -60,5 +64,11 @@ export default {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
+}
+.hide-btn {
+  visibility: hidden;
+}
+.show-btn {
+  visibility: visible;
 }
 </style>

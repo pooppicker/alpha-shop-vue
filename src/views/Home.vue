@@ -10,7 +10,11 @@
           v-bind="form"
           @formChange="form[$event.name] = $event.value"
         />
-        <ButtonFunction :step="step" :handleSubmit="handleSubmit" />
+        <ButtonFunction
+          :step="step"
+          :handleSubmit="handleSubmit"
+          :isFirstPage="form.isFirstPage"
+        />
       </div>
     </div>
     <!-- form panel -->
