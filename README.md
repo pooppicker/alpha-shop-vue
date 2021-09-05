@@ -1,24 +1,20 @@
-# alpha-shop-vue
+# Alpha-Shop-vue
+
+## Overview
+
+A simple vue SPA shopping site
+
+## Feature
+
+- click buttons without refreshing
+- able to select deliver type and update price dynamically
+
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. git clone `https://github.com/pooppicker/alpha-shop-vue.git`
+2. cd `alpha-shop-vue` in terminal
+3. `npm i`
+4. `npm run serve`
+5. paste `http://localhost:8080/` on to the browser and enjoy ❤️
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
