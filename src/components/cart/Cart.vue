@@ -44,10 +44,6 @@ export default {
       type: Number,
       required: true,
     },
-    totalPrice: {
-      type: Number,
-      required: true,
-    },
     onChange: {
       type: Function,
     },
