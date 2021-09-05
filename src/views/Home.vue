@@ -62,6 +62,8 @@ export default {
   methods: {
     handleSubmit() {
       this.form = dummyData;
+      const print = JSON.stringify(this.form);
+      console.log(print);
     },
   },
   computed: {

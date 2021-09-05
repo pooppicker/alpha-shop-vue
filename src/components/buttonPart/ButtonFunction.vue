@@ -10,7 +10,7 @@
     <Button
       class="btn main__button__final"
       v-show="finalStep"
-      :onClick="finalStep ? handleSubmit : ''"
+      :onClick="handleSubmit"
     >
       確認下單
     </Button>
