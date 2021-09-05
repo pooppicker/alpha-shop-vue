@@ -6,7 +6,7 @@
       <div class="form-name-title">
         <label for="form-name-title">稱謂</label>
         <div class="title-wrapper">
-          <select v-model="salutation" name="title" id="title" required>
+          <select name="title" id="title" required>
             <option value="mr">先生</option>
             <option value="ms">小姐</option>
           </select>
@@ -14,13 +14,7 @@
       </div>
       <div class="form-full-name">
         <label for="form-full-name">姓名</label>
-        <input
-          v-model="username"
-          type="text"
-          name="name"
-          id="name"
-          placeholder="請輸入姓名"
-        />
+        <input type="text" name="name" id="name" placeholder="請輸入姓名" />
       </div>
     </div>
     <!-- phone&email -->
@@ -32,7 +26,6 @@
           name="phone"
           id="phone"
           placeholder="請輸入行動電話"
-          v-model="phone"
         />
       </div>
       <div class="form-email">
@@ -42,7 +35,6 @@
           name="email"
           id="email"
           placeholder="請輸入電子郵件"
-          v-model="email"
         />
       </div>
     </div>
@@ -51,7 +43,7 @@
       <div class="form-name-title">
         <label for="form-city">縣市</label>
         <div class="city-wrapper">
-          <select v-model="city" name="city" id="city">
+          <select :value="city" name="city" id="city">
             <option value="" disabled selected>請選擇縣市</option>
             <option value="taipei">台北</option>
             <option value="taichung">台中</option>
@@ -66,7 +58,6 @@
           name="address"
           id="address"
           placeholder="請輸入地址"
-          v-model="addr"
         />
       </div>
     </div>

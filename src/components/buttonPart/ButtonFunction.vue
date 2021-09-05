@@ -10,7 +10,7 @@
     <Button
       class="btn main__button__final"
       v-show="finalStep"
-      :onClick="handleSubmit"
+      :onClick="handleFinal"
     >
       確認下單
     </Button>
@@ -31,10 +31,6 @@ export default {
     Button,
   },
   props: {
-    handleSubmit: {
-      type: Function,
-      required: true,
-    },
     step: {
       type: Number,
       required: true,
@@ -50,6 +46,9 @@ export default {
       if (this.step < 3) {
         this.$router.push(`${this.step + 1}`);
       }
+    },
+    handleFinal() {
+      alert("Are you sure to checkout?");
     },
   },
   computed: {

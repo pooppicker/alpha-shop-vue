@@ -10,11 +10,7 @@
           v-bind="form"
           @formChange="form[$event.name] = $event.value"
         />
-        <ButtonFunction
-          :step="step"
-          :handleSubmit="handleSubmit"
-          :isFirstPage="form.isFirstPage"
-        />
+        <ButtonFunction :step="step" />
       </div>
     </div>
     <!-- form panel -->
@@ -44,6 +40,7 @@ const dummyData = {
   cardnumber: "",
   expdate: "",
   cvv: "",
+  totalPrice: 0,
 };
 
 export default {
@@ -58,13 +55,13 @@ export default {
       form: dummyData,
     };
   },
-  methods: {
-    handleSubmit() {
-      this.form = dummyData;
-      const print = JSON.stringify(this.form);
-      console.log(print);
-    },
-  },
+  // methods: {
+  //   handleSubmit() {
+  //     this.form = dummyData;
+  //     const print = JSON.stringify(this.form);
+  //     console.log(print);
+  //   },
+  // },
   computed: {
     step() {
       return +this.$route.path.split("/")[1];
