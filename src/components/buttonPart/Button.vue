@@ -16,30 +16,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.main__button .btn {
-  font-size: 14px;
-  cursor: pointer;
-}
-.main__button__next {
-  border: none;
-  border-radius: 5px;
-  height: 2.5rem;
-  padding: 0 3rem;
-  background-color: #f67599;
-  color: #ffffff;
-  z-index: 99;
-}
-
-.main__button__previous {
-  -webkit-appearance: none;
-  border: none;
-  background: white;
-}
-
-.main__button__previous::before {
-  content: "←";
-  margin-right: 1rem;
-}
-</style>

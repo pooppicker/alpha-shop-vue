@@ -57,3 +57,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.price {
+  margin-top: 1rem;
+}
+</style>
