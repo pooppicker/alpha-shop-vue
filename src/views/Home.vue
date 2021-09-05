@@ -5,7 +5,11 @@
       <div class="col-md-6 left">
         <h1 class="title">結帳</h1>
         <Steppers :currentStep="step" />
-        <Form :step="step" />
+        <Form
+          :step="step"
+          v-bind="form"
+          @formChange="form[$event.name] = $event.value"
+        />
         <ButtonFunction :step="step" :handleSubmit="handleSubmit" />
       </div>
     </div>

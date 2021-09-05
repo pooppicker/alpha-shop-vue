@@ -1,9 +1,9 @@
 <template>
   <input
     name="d-type"
-    type="radio"
     value="normal"
     id="normal"
+    type="radio"
     :checked="checked"
     @change="$emit('change', price)"
   />

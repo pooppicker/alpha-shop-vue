@@ -9,10 +9,11 @@
             type="radio"
             value="normal"
             id="normal"
-            :price="0"
             :checked="shippingFee === 0"
+            :price="0"
             @change="handleClick"
-          /><label for="normal">
+          />
+          <label for="normal">
             <span class="deliver-title">標準運送</span>
             <span class="deliver-description">約3-7個工作天</span>
           </label>
@@ -24,10 +25,11 @@
             type="radio"
             value="dhl"
             id="dhl"
-            :price="500"
             :checked="shippingFee === 500"
+            :price="500"
             @change="handleClick"
-          /><label for="dhl">
+          />
+          <label for="dhl">
             <span class="deliver-title">DHL貨運</span>
             <span class="deliver-description">48小時內送達</span>
           </label>
@@ -39,18 +41,15 @@
 </template>
 
 <script>
-import RadioInput from "./../FormInput/RadioInput.vue";
+import RadioInput from "../FormInput/RadioInput.vue";
+
 export default {
-  computed: {
+  components: {
     RadioInput,
   },
   props: {
     checked: {
       type: Boolean,
-    },
-    price: {
-      type: Number,
-      required: true,
     },
     shippingFee: {
       type: Number,
@@ -59,7 +58,7 @@ export default {
   },
   methods: {
     handleClick(e) {
-      this.$emit("formChnage", { name: "shippingFee", value: e });
+      this.$parent.$emit("formChange", { name: "shippingFee", value: e });
     },
   },
 };
@@ -68,7 +67,7 @@ export default {
 <style>
 .main__form__delivery input[type="radio"] {
   margin-right: 1rem;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   border-radius: 50%;
 }
 .main__form__delivery input[type="radio"] ~ label {
@@ -78,10 +77,10 @@ export default {
   margin: 0;
   font-size: 13px;
 }
-.main__form__delivery input[type="radio"]:checked {
+/* .main__form__delivery input[type="radio"]:checked {
   box-shadow: inset 0 0 0 5px #2a2a2a;
-}
-.main__form__delivery .deliver input[type="radio"]:checked::before {
+} */
+.deliver input[type="radio"]:checked::before {
   content: "";
   position: absolute;
   top: 0;

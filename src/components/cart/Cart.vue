@@ -79,7 +79,6 @@ export default {
         total += item.price * item.amount;
       });
       total += this.shippingFee;
-      this.$emit("change", total);
       return getPrice(total);
     },
   },

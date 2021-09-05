@@ -6,7 +6,11 @@
         <!-- part 1 -->
         <CheckOutInformation v-if="firstStep" />
         <!-- part 2 -->
-        <CheckOutDelivery v-else-if="nextStep" />
+        <CheckOutDelivery
+          v-else-if="nextStep"
+          :shippingFee="shippingFee"
+          v-on="$listeners"
+        />
         <!-- part 3 -->
         <CheckOutPayment v-else />
       </form>
@@ -15,21 +19,25 @@
 </template>
 
 <script>
-import CheckOutInformation from "./../components/steps/CheckOutInformation.vue";
-import CheckOutDelivery from "./../components/steps/CheckOutDelivery.vue";
-import CheckOutPayment from "./../components/steps/CheckOutPayment.vue";
+import CheckOutInformation from "./../components/formSteps/CheckOutInformation.vue";
+import CheckOutDelivery from "./../components/formSteps/CheckOutDelivery.vue";
+import CheckOutPayment from "./../components/formSteps/CheckOutPayment.vue";
 
 export default {
+  components: {
+    CheckOutInformation,
+    CheckOutDelivery,
+    CheckOutPayment,
+  },
   props: {
     step: {
       type: Number,
       default: 1,
     },
-  },
-  components: {
-    CheckOutInformation,
-    CheckOutDelivery,
-    CheckOutPayment,
+    shippingFee: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     firstStep() {
