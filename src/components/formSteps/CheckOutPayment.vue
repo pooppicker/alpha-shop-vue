@@ -10,6 +10,7 @@
             name="card-name"
             id="card-name"
             placeholder="請輸入姓名"
+            v-model="ccname"
           />
         </div>
         <div class="card-number">
@@ -19,22 +20,46 @@
             name="number"
             id="number"
             placeholder="0000 0000 0000 0000"
+            v-model="cardnumber"
           />
         </div>
         <div class="card-verify">
           <div class="valid-date">
             <label>有效期限</label>
-            <input type="text" name="date" id="date" placeholder="MM/YY" />
+            <input
+              v-model="expdate"
+              type="text"
+              name="date"
+              id="date"
+              placeholder="MM/YY"
+            />
           </div>
           <div class="cvc">
             <label>CVC / CCV</label>
-            <input type="text" name="cvc" id="cvc" placeholder="123" />
+            <input
+              v-model="cvv"
+              type="text"
+              name="cvc"
+              id="cvc"
+              placeholder="123"
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    ccname: String,
+    cardnumber: String,
+    expdate: String,
+    cvv: String,
+  },
+};
+</script>
 
 <style scoped>
 .part3 input {
